@@ -32,15 +32,20 @@ hbs.registerHelper('year', () => {
 app.get('/', (req,res) => {
 res.render('home.hbs', {
   title: 'Welcome to home page',
-  year: new Date().getFullYear(),
   welcome: 'Hi!! User'
 });
 });
 
+app.get('/projects', (req,res) => {
+  res.render('projects.hbs', {
+    projects: ['photo','video','cinemato'],
+    title: 'Portfolio page'
+  });
+});
+
 app.get('/about',(req,res) => {
   res.render('about.hbs', {
-    title: 'About this page',
-    year: new Date().getFullYear()
+    title: 'About this page'
   });
 });
 
